@@ -1,0 +1,21 @@
+ 
+
+    <ul class="tradingVolume-list"  >
+        <li *ngFor="let item of optionData" 
+        >
+            <div class="tradingVolume-top clearfix">
+                <div class="tradingVolume-process-wrap">
+                    <span class="tradingVolume-process">
+                        <span class="tradingVolume-process-bar"   [ngStyle]="{'width': item.proValue}"></span>
+                    </span>
+                </div>
+                <span class="tradingVolume-num fr">￥{{item.barValue | number:'1.2-2'}}</span>
+            </div>
+            <div class="tradingVolume-btm tx-overflow">
+                 {{item.title}}
+            </div>
+        </li>
+ 
+  
+    </ul>
+ 

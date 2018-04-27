@@ -1,0 +1,46 @@
+<!--蒙版 -->
+<div class="brand-popup"></div>
+<!--弹出层 -->
+<div class="brand-alert"  >
+    <div class="brand-alert-til">{{modal.title}}
+        <i class="alert-close"  (click)="returnModel()"></i>
+    </div>
+    <div class="brand-alert-con">
+        <div class="slic-row">
+            <div class="til">刷新频率：</div>
+            <div class="con">每
+                <input type="text" class="input alert-input-small"  [(ngModel)]="modal.equency"/> 秒刷新一次</div>
+        </div>
+        <div class="slic-row">
+            <div class="til">统计区域： </div>
+            <div class="con">
+                <sui-area [(ngModel)]="modal.areaid" [level]='2'></sui-area>
+            </div>
+        </div>
+        <div class="slic-row"  >
+            <div class="til">调整大小：</div>
+            <div class="con">
+                <input type="radio" class="slic-radio" name="name1" [(ngModel)]="modal.catlevel" value="1"/> 大版
+                <input type="radio" class="slic-radio" name="name2" [(ngModel)]="modal.catlevel" value="3"/> 小版
+            </div>
+        </div>
+        <div class="slic-row"  *ngIf="modal.dateselectionArray.length>0">
+            <div class="til">统计周期:</div>
+            <div class="con">
+                <select  [(ngModel)]="modal.dateselection">
+                    <option *ngFor="let item of modal.dateselectionArray"  [value]='item.value'>{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="slic-row">
+            <div class="til">权值：</div>
+            <div class="con">
+                <input type="text" class="input alert-input-small" placeholder="15" /> </div>
+        </div>
+    </div>
+    <div class="brand-alert-foot">
+        <button type="button" class="brnad-set-btn" (click)="returnModel()">返回</button>
+        <button type="button" class="brnad-set-btn" (click)="modelSave()">保存</button>
+    </div>
+</div>

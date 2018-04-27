@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-list-bar-noframe-chart',
+  templateUrl: './list-bar-noframe-chart.component.html',
+  styleUrls: ['./list-bar-noframe-chart.component.css']
+})
+export class ListBarNoframeChartComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

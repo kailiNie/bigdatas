@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../services/common.service'
+@Component({
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
+})
+export class EditComponent implements OnInit {
+
+    public tiem  = this.commonService.getCurrentTimes();
+    
+   public titleObj = this.commonService.titleObj;
+  
+   public setTitle : string;
+  constructor( public commonService:CommonService) { }
+
+  ngOnInit() {
+  }
+
+
+  save(){
+      console.log('进入');
+      this.commonService.titleObj.title =this.setTitle;
+ 
+  }
+
+}

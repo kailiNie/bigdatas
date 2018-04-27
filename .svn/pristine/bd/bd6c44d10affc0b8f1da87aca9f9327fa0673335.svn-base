@@ -1,0 +1,197 @@
+
+
+/*品类销售排行/全栈经理业绩排行  媒体查询  */
+@media only screen and (min-height:600px ) {
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:760px ) {
+
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:800px ) {
+	.transaction-list-name {
+		font-size: 14px;
+	}
+	
+}
+@media only screen and (min-height:900px ) {
+	.transaction-list-name {
+		font-size: 16px;
+	}
+}
+
+.category-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 35px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+
+.category-list{
+	width: 100%;
+	height: 100%;
+}
+.category-list li {
+	position: relative;
+	height: 20%;
+	line-height: 20%;
+	font-size: 16px;
+}
+
+.category-list-name {
+	float: left;
+	display: block;
+	width: 80px;
+	height: 16px;
+	line-height: 16px;
+}
+.category-list-bar-wrap{
+	float: left;
+	display: block;
+	width: calc(100% - 170px);
+	height: 12px;
+}
+.category-list-bar{
+	display: block;
+	width: 100%;
+	height: 10px;
+	border-radius: 10px;
+	transition: all .5s;
+}
+.category-list-bar.category-list-bar1{
+	background: #ffd954;
+}
+.category-list-bar.category-list-bar2{
+	background: #f08c1a;
+}
+.category-list-bar.category-list-bar3{
+	background: #50e9e6;
+}
+.category-list-bar.category-list-bar4{
+	background: #69cfff;
+}
+.category-list-bar.category-list-bar5{
+	background: #3d96cc;
+}
+.category-list-bar.category-list-bar6{
+	background: #ff7234;
+}
+.category-list-bar.category-list-bar7{
+	background: #36e8b8;
+}
+.category-list-bar.category-list-bar8{
+	background: #13d895;
+}
+.category-list-bar.category-list-bar9{
+	background: #34abff;
+}
+.category-list-bar.category-list-bar10{
+	background: #2674bb;
+}
+.category-list-money {
+	float: right;
+	display: block;
+	width: 90px;
+	height: 16px;
+	line-height: 16px;
+	text-align: right;
+	color: #69cfff;
+}
+
+.category-panel.big .category-list li {
+	height: 10%;
+}
+
+
+/*品类销售排行/全栈经理业绩排行  媒体查询  */
+@media only screen and (min-height:600px ) {
+	.category-list li {
+		line-height: 22px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+	.category-list li {
+		line-height: 25px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.category-list li {
+		line-height: 25px;
+		font-size: 13px;
+	}
+	
+}
+@media only screen and (min-height:800px ) {
+	.category-list {
+		padding-top: 10px;
+	}
+	.category-list li {
+		line-height: 30px;
+		font-size: 13px;
+	}
+	
+}
+@media only screen and (min-height:900px ) {
+	.category-list li {
+		line-height: 35px;
+		font-size: 13px;
+	}
+	
+}
+
+/*品类销售排行（深圳）组件区域-----------------------*/
+.transaction-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 35px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+.transaction-date {
+	box-sizing: border-box;
+	width: 100%;
+	height: 20px;
+	font-size: 12px;
+}
+.this-week {
+	float: right;
+	width: 40px;
+	height: 12px;
+	margin-right: 20px;
+	color: #69e1ff;
+}
+.this-week-icon {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #69e1ff;
+}
+.last-week {
+	position: relative;
+	float: right;
+	width: 40px;
+	height: 12px;
+	color: #13d895;
+}
+.last-week-icon {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #13d895;
+}

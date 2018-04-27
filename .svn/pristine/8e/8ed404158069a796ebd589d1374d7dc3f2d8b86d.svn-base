@@ -1,0 +1,129 @@
+
+
+/**
+ * 折线图组件 组件传入宽高 X周数据Y周数据
+ *  option any  传入的是一个对象 保持与echarts 对象一致 便于API调试
+ */
+import { Component, OnInit,Input  } from '@angular/core';
+/** 
+ * 校验统计图
+*/
+@Component({
+    selector: 'app-link-chart',
+    templateUrl: './link-chart.component.html',
+    styleUrls: ['./link-chart.component.css']
+})
+export class LinkChartComponent implements OnInit {
+    
+    @Input() option : any;
+
+    initOpts = {
+        renderer: 'svg',
+        width: 150, //默认150
+        height: 150 //默认150
+    };
+
+    public options = {
+        color: ['#69E1EF'],
+        tooltip: {
+            trigger: 'axis'
+        },
+        grid: {
+            left: '0',
+            right: '20',
+            bottom: '40',
+            top: '30',
+            containLabel: true,
+            show: false,
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [],
+
+            axisLabel: {
+                interval: 3,
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: ['#66CBFC'],
+                    opacity: 0.1,
+                }
+            },//网格线,
+            axisLine: { //数值
+                show: true,
+                lineStyle: {
+                    color: '#66CBFC'
+                }
+            },
+            axisTick: {
+                show: true,
+                inside: true
+            }
+        },
+        yAxis: {
+            type: 'value',
+            data: [],
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    // 使用深浅的间隔色
+                    color: ['#66CBFC'],
+                    opacity: 0.1,
+                }
+            },//网格线,
+
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    color: '#66CBFC'
+                }
+            },
+            //是否显示坐标轴刻度 inside 朝内
+            axisTick: {
+                show: true,
+                inside: true
+            }
+
+        },
+        series: [{
+            data: [0, 25, 34, 12, 57, 68, 71, 82, 900, 101, 0, 0, 0, 12, 62, 0, 45, 74, 23, 12, 543, 1000, 123, 73, 23, 0],
+            type: 'line',
+            areaStyle: {
+                opacity: '0.1'
+            },
+            axisLabel: {
+                interval: 3
+            },
+        }
+        ]
+    };
+
+    constructor() {
+        
+     }
+
+    ngOnInit() {
+        console.log(this.option);
+        const {width,height} = this.option;
+        this.initOpts.width = width;
+        this.initOpts.height = height;
+        var time = new Time();
+        this.options.xAxis.data = time.getTimes();
+    }
+}
+
+//时间类
+export class Time {
+    //获取一天小时数组
+    getTimes() {
+        const times = [];
+        for (var i = 0; i <= 25; i++) {
+            times.push(`${i}:00`);
+        }
+        return times;
+    }
+}
+

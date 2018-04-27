@@ -1,0 +1,9 @@
+/**
+ * demos-uis路径映射
+ */
+devIncludeUrls({
+    "common/sms/send": { "mapUrl": "", "server": "RAP", "isUnion": false },
+    "common/sms/check": { "mapUrl": "", "server": "RAP", "isUnion": false },
+    "standard-ui/master-slave-sheet/query": { "mapUrl": "", "server": "RAP", "isUnion": false },
+    "saleman/visit/query": { "mapUrl": "", "server": "RAP", "isUnion": false },
+});

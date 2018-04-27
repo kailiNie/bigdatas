@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-list-bar-char',
+  templateUrl: './list-bar-char.component.html',
+  styleUrls: ['./list-bar-char.component.css']
+})
+export class ListBarCharComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

@@ -1,0 +1,324 @@
+<div class="keyBoard" [suikeyboard] (keydown.enter)="confirm()">
+<div class="brand-head">
+    <h1 class="brand-head-til" data-text="智店宝大数据监控平台">{{title}}</h1>
+    <h3 class="brand-head-time">{{tiem}}</h3>
+</div>
+<div class="brand-wrap main">
+    <section class="demo">
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                    
+                    <p class="brandMian-til-big mt10">实时拜访(全国)</p>
+                    <div class="visit-panel">
+                        <i class="borad_corner borad_corner_1"></i>
+                        <i class="borad_corner borad_corner_2"></i>
+                        <i class="borad_corner borad_corner_3"></i>
+                        <i class="borad_corner borad_corner_4"></i>
+                        <app-list-data [optionData] = "this.visitRestlt"></app-list-data>
+                    </div>
+                </li>
+
+          
+                <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+
+                    <p class="brandMian-til-big mt10">今日总览(全国)</p>
+                    <div class="overview-panel">
+                        <i class="borad_corner borad_corner_1"></i>
+                        <i class="borad_corner borad_corner_2"></i>
+                        <i class="borad_corner borad_corner_3"></i>
+                        <i class="borad_corner borad_corner_4"></i>
+
+                        <ul class="overview-list clearfix">
+                            <li>
+                                <p class="overview-list-txt">客户总量</p>
+                                <p class="overview-list-num overview-list-num1">
+                                    <label class="overview-list-numBig">23456</label> 家 </p>
+                            </li>
+                            <li>
+                                <p class="overview-list-txt">商圈总量</p>
+                                <p class="overview-list-num overview-list-num2">
+                                    <label class="overview-list-numBig">236</label> 个 </p>
+                            </li>
+                            <li>
+                                <p class="overview-list-txt">交易总量</p>
+                                <p class="overview-list-num overview-list-num3">
+                                    <label class="overview-list-numBig">1500</label> 单</p>
+                            </li>
+                            <li>
+                                <p class="overview-list-txt">今日拜访</p>
+                                <p class="overview-list-num overview-list-num4">
+                                    <label class="overview-list-numBig">2222</label> 家</p>
+                            </li>
+
+                            <li>
+                                <p class="overview-list-txt">今日新增客户</p>
+                                <p class="overview-list-num overview-list-num5">
+                                    <label class="overview-list-numBig">666</label> 家</p>
+                            </li>
+                            <li>
+                                <p class="overview-list-txt">今日下单</p>
+                                <p class="overview-list-num  overview-list-num6">
+                                    <label class="overview-list-numBig">2222</label> 单</p>
+                            </li>
+                            <li class="big">
+                                <p class="overview-list-txt">交易金额</p>
+                                <p class="overview-list-num  overview-list-num7">
+                                    <label class="overview-list-numBig">￥123,456.36</label>
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </li>
+
+                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+
+                    <p class="brandMian-til-big mt10">实时订单(全国)</p>
+                    <div class="order-panel">
+                        <i class="borad_corner borad_corner_1"></i>
+                        <i class="borad_corner borad_corner_2"></i>
+                        <i class="borad_corner borad_corner_3"></i>
+                        <i class="borad_corner borad_corner_4"></i>
+
+                        <ul class="order-list">
+                            <li class="clearfix">
+                                <span class="order-list-time">14:09</span>
+                                <span class="order-list-area">深圳</span>
+                                <span class="order-list-name tx-overflow">美宜佳便利店美宜佳便利店美宜佳便利店美宜佳便利店美宜佳便利店</span>
+                                <span class="order-list-money ">￥876,543.00</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="order-list-time">14:09</span>
+                                <span class="order-list-area ">宝安</span>
+                                <span class="order-list-name  tx-overflow">喜洋洋便利店</span>
+                                <span class="order-list-money ">￥323.00</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="order-list-time ">14:09</span>
+                                <span class="order-list-area ">福田</span>
+                                <span class="order-list-name  tx-overflow">喜洋洋便利店</span>
+                                <span class="order-list-money ">￥1,234.00</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="order-list-time ">14:09</span>
+                                <span class="order-list-area ">龙华</span>
+                                <span class="order-list-name  tx-overflow">喜洋洋便利店</span>
+                                <span class="order-list-money ">￥2323.00</span>
+                            </li>
+                            <li class="clearfix">
+                                <span class="order-list-time ">14:09</span>
+                                <span class="order-list-area ">龙岗</span>
+                                <span class="order-list-name  tx-overflow">喜洋洋便利店</span>
+                                <span class="order-list-money ">￥1,434.00</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+
+                <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+                    <p class="brandMian-til-big mt10">批发商交易额排行（龙岗）</p>
+                    <div class="order-panel">
+                        <i class="borad_corner borad_corner_1"></i>
+                        <i class="borad_corner borad_corner_2"></i>
+                        <i class="borad_corner borad_corner_3"></i>
+                        <i class="borad_corner borad_corner_4"></i>
+                        <app-list-bar-char></app-list-bar-char>
+                    </div>
+                </li>
+
+
+                <li data-row="2" data-col="2" data-sizex="2" data-sizey="2">
+                   
+                    <p class="brandMian-til-big mt10">重点区域(深圳)</p>
+                    <div class="keyArea-panel">
+                        <i class="borad_corner borad_corner_1"></i>
+                        <i class="borad_corner borad_corner_2"></i>
+                        <i class="borad_corner borad_corner_3"></i>
+                        <i class="borad_corner borad_corner_4"></i>
+                        <app-map-chart [option] = "mapOption"></app-map-chart>
+                        <div class="keyArea-con clearfix">
+                            <ul class="keyArea-con-list">
+                                <li class="keyArea-con-row1">
+                                    <div class="keyArea-con-list-col  keyArea-til">区域</div>
+                                    <div class="keyArea-con-list-col">宝安区</div>
+                                    <div class="keyArea-con-list-col">龙岗区</div>
+                                    <div class="keyArea-con-list-col">龙华区</div>
+                                    <div class="keyArea-con-list-col">龙华区</div>
+                                    <div class="keyArea-con-list-col">其他区</div>
+                                </li>
+                                <li>
+                                    <div class="keyArea-con-list-col  keyArea-til">客户数</div>
+                                    <div class="keyArea-con-list-col">2345</div>
+                                    <div class="keyArea-con-list-col">1789</div>
+                                    <div class="keyArea-con-list-col">1657</div>
+                                    <div class="keyArea-con-list-col">1234</div>
+                                    <div class="keyArea-con-list-col">567</div>
+                                </li>
+                                <li>
+                                    <div class="keyArea-con-list-col  keyArea-til">周活跃数</div>
+                                    <div class="keyArea-con-list-col">1234</div>
+                                    <div class="keyArea-con-list-col">890</div>
+                                    <div class="keyArea-con-list-col">1209</div>
+                                    <div class="keyArea-con-list-col">678</div>
+                                    <div class="keyArea-con-list-col">231</div>
+                                </li>
+                                <li>
+                                    <div class="keyArea-con-list-col  keyArea-til">周新增数</div>
+                                    <div class="keyArea-con-list-col">123</div>
+                                    <div class="keyArea-con-list-col">56</div>
+                                    <div class="keyArea-con-list-col">88</div>
+                                    <div class="keyArea-con-list-col">12</div>
+                                    <div class="keyArea-con-list-col">456</div>
+                                </li>
+                                <li>
+                                    <div class="keyArea-con-list-col  keyArea-til">周订单数</div>
+                                    <div class="keyArea-con-list-col">1234</div>
+                                    <div class="keyArea-con-list-col">456</div>
+                                    <div class="keyArea-con-list-col">378</div>
+                                    <div class="keyArea-con-list-col">265</div>
+                                    <div class="keyArea-con-list-col">834</div>
+                                </li>
+                                <li>
+                                    <div class="keyArea-con-list-col  keyArea-til">周交易金额</div>
+                                    <div class="keyArea-con-list-col">1234.45万</div>
+                                    <div class="keyArea-con-list-col">108.21万</div>
+                                    <div class="keyArea-con-list-col">67.56万</div>
+                                    <div class="keyArea-con-list-col">12.30万</div>
+                                    <div class="keyArea-con-list-col">1.98万</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li data-row="2" data-col="4" data-sizex="1" data-sizey="2">
+                    <p class="brandMian-til-big mt10">品类销售排行（深圳）</p>
+                        <app-list-bar-noframe-chart></app-list-bar-noframe-chart>
+                </li>
+
+
+                <li data-row="3" data-col="1" data-sizex="1" data-sizey="2">
+                        <p class="brandMian-til-big mt10">分时交易</p>
+                        <div class="tradingVolume-panel">
+                                <i class="borad_corner borad_corner_1"></i>
+                                <i class="borad_corner borad_corner_2"></i>
+                                <i class="borad_corner borad_corner_3"></i>
+                                <i class="borad_corner borad_corner_4"></i>
+                                <app-link-chart [option] = "linkChartOption"></app-link-chart>
+                    </div>
+                </li>
+
+                <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+                        <p class="brandMian-til-big mt10">商品销售排行（深圳）</p>
+                        <div class="order-panel">
+                            <i class="borad_corner borad_corner_1"></i>
+                            <i class="borad_corner borad_corner_2"></i>
+                            <i class="borad_corner borad_corner_3"></i>
+                            <i class="borad_corner borad_corner_4"></i>
+                            <app-list-bar-char></app-list-bar-char>
+                        </div>
+                    </li>
+
+
+                <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+                    <p class="brandMian-til-big mt10">全栈经理业绩排行(深圳)</p>
+                    <app-list-bar-noframe-chart></app-list-bar-noframe-chart>
+                </li>
+
+                <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+                    	<p class="brandMian-til-big mt10">交易统计（本周广东）</p>
+				<div class="transaction-panel">
+					<i class="borad_corner borad_corner_1"></i>
+					<i class="borad_corner borad_corner_2"></i>
+					<i class="borad_corner borad_corner_3"></i>
+					<i class="borad_corner borad_corner_4"></i>
+					
+					<div class="transaction-date">
+						<div class="last-week"><i class="last-week-icon"></i>上周</div>
+						<div class="this-week"><i class="this-week-icon"></i> 本周</div>
+					</div>
+					<ul class="transaction-list clearfix">
+						<li>
+							<div class="transaction-bar-wrap clearfix">
+								<div class="transaction-thisWeek">
+									<div class="transaction-thisWeek-wrap" style="height:30px;">
+										<div class="transaction-thisWeek-bar">
+											<p class="transaction-thisWeek-bar-txt">200万</p>
+										</div>
+										
+									</div>
+								</div>	<!--本周条柱  end-->
+								
+								<div class="transaction-lastWeek">
+									<div class="transaction-lastWeek-wrap" style="height:500px;">
+										<div class="transaction-lastWeek-bar">
+											<p class="transaction-lastWeek-bar-txt">369</p>
+										</div>
+									</div>
+								</div>	<!--上周条柱 end-->
+							</div><!--transaction-bar-wrap end-->
+							<div class="transaction-list-name">交易金额</div>
+						</li>
+						<li>
+							<div class="transaction-bar-wrap clearfix">
+								<div class="transaction-thisWeek">
+									<div class="transaction-thisWeek-wrap" style="height:50px;">
+										<div class="transaction-thisWeek-bar">
+											<p class="transaction-thisWeek-bar-txt">124</p>
+										</div>
+										
+									</div>
+								</div>	<!--本周条柱  end-->
+								
+								<div class="transaction-lastWeek">
+									<div class="transaction-lastWeek-wrap" style="height:200px;">
+										<div class="transaction-lastWeek-bar">
+											<p class="transaction-lastWeek-bar-txt">453</p>
+										</div>
+									</div>
+								</div>	<!--上周条柱 end-->
+							</div><!--transaction-bar-wrap end-->
+							<div class="transaction-list-name">交易单数</div>
+						</li>
+						<li>
+							<div class="transaction-bar-wrap clearfix">
+								<div class="transaction-thisWeek">
+									<div class="transaction-thisWeek-wrap" style="height:50px;">
+										<div class="transaction-thisWeek-bar">
+											<p class="transaction-thisWeek-bar-txt">134</p>
+										</div>
+										
+									</div>
+								</div>	<!--本周条柱  end-->
+								
+								<div class="transaction-lastWeek">
+									<div class="transaction-lastWeek-wrap" style="height:100px;">
+										<div class="transaction-lastWeek-bar">
+											<p class="transaction-lastWeek-bar-txt">1230</p>
+										</div>
+									</div>
+								</div>	<!--上周条柱 end-->
+							</div><!--transaction-bar-wrap end-->
+							<div class="transaction-list-name">活跃客户</div>
+						</li>
+					</ul>		
+					
+				</div>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </section>
+</div>
+
+</div>
+<!--brand-wrap  end-->

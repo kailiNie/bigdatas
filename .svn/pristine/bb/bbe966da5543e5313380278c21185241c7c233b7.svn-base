@@ -1,0 +1,47 @@
+<div class="category-panel">
+    <i class="borad_corner borad_corner_1"></i>
+    <i class="borad_corner borad_corner_2"></i>
+    <i class="borad_corner borad_corner_3"></i>
+    <i class="borad_corner borad_corner_4"></i>
+
+    <ul class="category-list">
+        <li class="clearfix">
+            <span class="category-list-name tx-overflow">饮用水</span>
+            <span class="category-list-bar-wrap">
+                <span class="category-list-bar category-list-bar1" style="width: 70%;"></span>
+            </span>
+            <span class="category-list-money">￥876,543.00</span>
+        </li>
+
+        <li class="clearfix">
+            <span class="category-list-name tx-overflow">日用杂品</span>
+            <span class="category-list-bar-wrap">
+                <span class="category-list-bar category-list-bar2" style="width: 90%;"></span>
+            </span>
+            <span class="category-list-money">￥86,543.00</span>
+        </li>
+        <li class="clearfix">
+            <span class="category-list-name tx-overflow">饮料</span>
+            <span class="category-list-bar-wrap">
+                <span class="category-list-bar category-list-bar3" style="width: 80%;"></span>
+            </span>
+            <span class="category-list-money">￥5,5543.00</span>
+        </li>
+        <li class="clearfix">
+            <span class="category-list-name tx-overflow">乳品</span>
+            <span class="category-list-bar-wrap">
+                <span class="category-list-bar category-list-bar4" style="width: 70%;"></span>
+            </span>
+            <span class="category-list-money">￥46,543.00</span>
+        </li>
+        <li class="clearfix">
+            <span class="category-list-name tx-overflow">日用杂品</span>
+            <span class="category-list-bar-wrap">
+                <span class="category-list-bar category-list-bar5" style="width: 50%;"></span>
+            </span>
+            <span class="category-list-money">￥22543.00</span>
+        </li>
+
+    </ul>
+
+</div>

@@ -1,0 +1,60 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule,DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+// import { MainListComponent } from '../main/main-list/main-list.component'
+import { SuiValidatorModule } from '@op/smile/components/validator/sui-validator';
+import { EditComponent } from './control/edit/edit.component';
+import { ListComponent } from './main/list/list.component';
+import { CommonService }  from './services/common.service';
+import { LoginComponent } from './login/login.component'
+import { LoginService } from './login/login.service';
+import { NgxEchartsModule } from 'ngx-echarts';
+import {LinkChartComponent } from './components/link-chart/link-chart.component';
+import { MapChartComponent } from './components/map-chart/map-chart.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ModalModule } from '@op/smile/components/modal/modal.module';
+import { CommonDirectivesModule } from '@op/smile/directives/groups/common-directives.module';
+// const appName = 'login';
+// const root = `/apps/logins/`;
+
+const routers: Routes = [
+    // { path: appName, loadChildren: './login.module#LoginModule' },
+    // { path: 'testMain', component:  MainListComponent },
+    {path : 'login',component: LoginComponent},
+    { path: 'edit', component:  EditComponent },
+    { path: 'main', component:  ListComponent }
+];
+ 
+
+@NgModule({
+    declarations: [
+        EditComponent,
+        ListComponent,
+        LoginComponent,
+        LinkChartComponent,
+        MapChartComponent
+          
+    ],
+    imports: [
+        CommonModule,
+        SuiValidatorModule,
+        RouterModule.forChild(routers),
+        FormsModule,
+        NgxEchartsModule,
+        HttpClientModule,
+        ModalModule,
+        CommonDirectivesModule
+    ],
+    exports: [
+    ],
+    providers: [
+        CommonService,
+        LoginService,
+        DatePipe
+    ]
+})
+export class RootRouterModule {
+    constructor(){
+    }
+ }  

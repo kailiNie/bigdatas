@@ -1,0 +1,458 @@
+/* 
+ * date: 20180412 
+ * author: herj
+ * description: 大数据看板 数据平台 css
+ */
+ 
+ .keyBoard{
+    width: 100%;
+    height: 100%  
+}
+ 
+.brand-wrap.main {
+	margin-top: 0;
+	color: #fff;
+	font-family: '微软雅黑';
+}
+ 
+.brandMian-til-big {
+	width: 100%;
+	height: 40px;
+	padding:0 20px ;
+	line-height: 40px;
+	font-size: 22px;
+	color: #69e1ff;
+	background-color: #69cfff;
+	background: url(../../../../assets/imgs/brand-til-bg1.png) no-repeat;
+	background-size: 100% 100%;
+}
+/*头部标题和时间标题媒体查询*/
+@media only screen and (max-width:1600px ) {
+	.brandMian-til-big {
+		height: 30px;
+		padding:0 20px ;
+		line-height: 30px;
+		font-size: 16px;
+	}
+}
+/*4个边角图标*/
+.borad_corner {
+	position: absolute;
+	z-index: 3;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(../../../../assets/imgs/borad_corner.png) no-repeat;
+	
+}
+.borad_corner_1 {
+	top: -4px;
+	left: -4px;
+	background-position: 0 0;
+}
+.borad_corner_2 {
+	bottom: -4px;
+	left: -4px;
+	background-position: 0 -16px;
+}
+.borad_corner_3 {
+	top: -4px;
+	right: -4px;
+	background-position: 0 -48px;
+}
+.borad_corner_4 {
+	bottom: -4px;
+	right: -4px;
+	background-position: 0 -32px;
+}
+
+
+/*实时拜访组件区域 -----------------------*/
+.visit-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+@media only screen and (max-width:1600px ) {
+	.visit-panel  {
+		height: calc(100% - 35px);
+	}
+}
+ 
+
+/*实时订单组件区域-----------------------*/
+.order-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+@media only screen and (max-width:1600px ) {
+	.order-panel  {
+		height: calc(100% - 35px);
+	}
+}
+
+.order-list{
+	width: 100%;
+	height: 100%;
+}
+.order-list li {
+	position: relative;
+	height: 20%;
+	line-height: 30px;
+	font-size: 16px;
+	padding-left:10px;
+}
+.order-list li::before {
+	content: '';
+	position: absolute;
+	z-index: 3;
+	width: 6px;
+	height: 6px;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: #69e1ff;
+}
+/*显示大图*/
+.order-panel.big .order-list li {
+	height: 10%;
+}
+.order-list-time {
+	box-sizing: border-box;
+	float: left;
+	width: 60px;
+	padding-right: 20px;
+}
+.order-list-area {
+	box-sizing: border-box;
+	float: left;
+	width: 50px;
+	padding-right: 20px;
+}
+.order-list-name {
+	box-sizing: border-box;
+	float: left;
+	width: calc(100% - 210px);
+}
+.order-list-money {
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width: 90px;
+	text-align: right;
+}
+/*实时订单 媒体查询  */
+@media only screen and (min-height:600px ) {
+	.order-list li {
+		line-height: 14px;
+		font-size: 12px;
+	}
+	.order-panel.big .order-list li {
+		line-height: 24px;
+	}
+
+}
+@media only screen and (min-height:720px ) {
+	.order-list li {
+		line-height: 16px;
+		font-size: 12px;
+	}
+	.order-panel.big .order-list li {
+		line-height: 26px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.order-list li {
+		line-height: 18px;
+		font-size: 13px;
+	}	
+}
+@media only screen and (min-height:800px ) {
+	.order-list li {
+		line-height: 22px;
+		font-size: 14px;
+	}
+}
+@media only screen and (min-height:900px ) {
+	.order-list {
+		padding-top: 10px;
+	}
+	.order-list li {
+		line-height: 24px;
+		font-size: 14px;
+	}
+	
+	.order-panel.big .order-list li {
+		line-height: 30px;
+	}
+}
+/*品类销售排行（深圳）组件区域-----------------------*/
+ 
+/*重点区域组件*/
+.keyArea-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	/* padding: 10px; */
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}       
+@media only screen and (max-width:1600px ) {
+	.keyArea-panel  {
+		height: calc(100% - 35px);
+	}
+}
+/*小视图小样*/
+.keyArea-con {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	box-sizing: border-box;
+	width: 80%;
+	height: 220px;
+	border: 1px solid #69e1ff;
+	border-left: none;
+	background: rgba(19, 33, 64, .8)
+}
+.keyArea-con::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	background: url(../../../../assets/imgs/keyArea-leftBar.png) left center no-repeat;
+	margin-left: -10px;
+	background-size: 100% 100%;
+}
+
+.keyArea-con-list {
+	width: 100%;
+	height: 100%;
+}
+.keyArea-con-list li{
+	box-sizing: border-box;
+	float: left;
+	width: 16%;
+	height: 100%;
+	font-size: 16px;
+}
+.keyArea-con-list li:first-child{
+	color: #69e1ff;
+}
+.keyArea-con-list li:last-child{
+	float: left;
+	width: 20%;
+}
+.keyArea-con-row1 {
+	color: #69e1ff;
+}
+.keyArea-con-list-col {
+	box-sizing: border-box;
+	width: 100%;
+	height: 16%;
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+}
+.keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: left;
+}
+
+/*大视图转换*/
+.keyArea-panel.big .keyArea-con{
+	position: static;
+	box-sizing: border-box;
+	width: 100%;
+	height: 33%;
+	border: none
+}
+.keyArea-panel.big .keyArea-con::before {
+	content: '';
+	display: none;
+}
+.keyArea-panel.big .keyArea-til {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	background: #2464a3;
+}
+.keyArea-panel.big .keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: center;
+}
+
+@media only screen and (max-width:1368px ) {
+	.keyArea-con-list li {
+		font-size: 13px;
+	}
+	.keyArea-con {
+		height: 160px;
+	}
+}
+@media only screen and (max-width:1279px ) {
+	.keyArea-con-list li {
+		font-size: 11px;
+	}
+	.keyArea-con-row1 .keyArea-con-list-col {
+		padding-left: 10px;
+	}
+}
+
+
+/*今日总览组件区域-----------------------*/
+.overview-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+@media only screen and (max-width:1600px ) {
+	.overview-panel  {
+		height: calc(100% - 35px);
+	}
+}
+.overview-list {
+	width: 100%;
+	height: 100%;
+}
+.overview-list li{
+	float: left;
+	width: 25%;
+	height: 50%;
+}
+.overview-list li.big{
+	float: left;
+	width: 50%;
+	height: 50%;
+}
+
+.overview-list-txt {
+	font-size: 14px;
+}
+.overview-list-numBig {
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 1;
+}
+.overview-panel .overview-list-num {
+	font-size: 12px;
+}
+.overview-panel .overview-list-num1 {
+	color: #50e9e6;
+}
+.overview-panel .overview-list-num2 {
+	color: #13d895;
+}
+.overview-panel .overview-list-num3 {
+	color: #f08c1a;
+}
+.overview-panel .overview-list-num4 {
+	color: #36e8b8;
+}
+.overview-panel .overview-list-num5 {
+	color: #69e1ff;
+}
+.overview-panel .overview-list-num6 {
+	color: #69e1ff;
+}
+.overview-panel .overview-list-num7 {
+	color: #ffd954;
+}     
+/*今日总览组件区域  媒体查询  */
+
+@media only screen and (max-width:1079px ) {
+	.overview-list-numBig {
+		font-size: 18px;
+	}
+}
+@media only screen and (min-width:1280px ) {
+	.overview-list-numBig {
+		font-size: 26px;
+	}
+}
+@media only screen and (min-width:1360px ) {
+	.overview-list-numBig {
+		font-size: 38px;
+	}
+}
+@media only screen and (min-width:1400px ) {
+	.overview-list-numBig {
+		font-size: 40px;
+	}
+} 
+ 
+ /*品类销售排行 组件区域-----------------------*/
+.transaction-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+	
+}
+@media only screen and (max-width:1600px ) {
+	.transaction-panel  {
+		height: calc(100% - 35px);
+	}
+}
+.transaction-date {
+	box-sizing: border-box;
+	width: 100%;
+	height: 20px;
+	font-size: 12px;
+}
+ 
+.tradingVolume-panel.big .tradingVolume-list li {
+	height: 16.67%;
+}
+
+.tradingVolume-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;	
+}
+@media only screen and (max-width:1600px ) {
+	.tradingVolume-panel  {
+		height: calc(100% - 35px);
+	}
+}
+
+
+/*分时交易图形组件区域-----------------------*/
+.timeSharing-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+@media only screen and (max-width:1600px ) {
+	.timeSharing-panel  {
+		height: calc(100% - 35px);
+	}
+}
+

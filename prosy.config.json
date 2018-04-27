@@ -1,0 +1,5 @@
+{
+    "http://localhost:4200/person" :{
+        "target":"http://192.168.15.70:8087/"
+    }
+}

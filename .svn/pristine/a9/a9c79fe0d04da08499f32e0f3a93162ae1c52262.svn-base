@@ -1,0 +1,85 @@
+/**
+ * NKL
+ * 大数据登录服务
+ * 2018-06-18
+ * 登录接口封装
+ *
+ */
+import { Injectable } from '@angular/core';
+//请求
+import { SuiHttpService } from '@op/smile/services/https/sui-http.service';
+import { LocalConfig } from '@op/smile/global/sui-local-config';
+import { RequestMethod } from '@angular/http';
+import { ModalService } from '@op/smile/components/modal/modal.service'
+ 
+@Injectable()
+export class LoginService {
+
+    constructor(public httpUtils: SuiHttpService,
+                public ModalService: ModalService) { }
+
+    /**
+     * 获取验证码方法
+     */
+    getVerCode(mobilePhone: string): any {
+        var option = {
+            url: 'common/sms/send',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            method: RequestMethod.Get,
+            isPublish: true,
+            globalLoad: true,
+            urlParam: {
+                mobilePhone: '18300006546'
+            }
+        }
+        return this.getHttp(option)
+    }
+
+       /** 登录 */
+       doLogin(userInfo: any) {
+        let option = {
+            url: 'person/login',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            bodyParam: {
+                mobilePhone: userInfo.eid || '',
+                password: userInfo.pswd || '',
+                appType: userInfo.loginName || '',
+            }
+        }
+        return this.httpUtils.request(option);
+    }
+
+
+
+    //检查登录
+    checkVerCode(param: any): any {
+        var option = {
+            url: 'common/sms/check',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: param
+        };
+        return this.getHttp(option)
+    }
+
+
+    getHttp(option: any): any {
+        return new Promise((resolve, reject) => {
+            this.httpUtils.request(option).subscribe(res => {
+                let { retCode, message } = res
+                if (retCode != 0) {
+                    this.ModalService.error(message);
+                    //reject(res); 
+                    return;
+                };
+                resolve(res);
+            });
+        })
+    }
+
+  
+
+
+}

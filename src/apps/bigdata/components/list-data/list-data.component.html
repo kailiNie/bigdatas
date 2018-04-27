@@ -1,0 +1,14 @@
+     <div class="visit-panel">
+        <i class="borad_corner borad_corner_1"></i>
+        <i class="borad_corner borad_corner_2"></i>
+        <i class="borad_corner borad_corner_3"></i>
+        <i class="borad_corner borad_corner_4"></i>
+        <ul class="visit-list">
+            <li class="tx-overflow" *ngFor="let item of optionData">
+                <span class="mr20">{{item.visittime}}</span>
+                <span class="mr20">{{item.custareaname}}</span>
+                <span class="mr20">{{item.salesname}}</span>
+                <span>{{item.custname}}</span>
+            </li>
+        </ul>
+    </div>

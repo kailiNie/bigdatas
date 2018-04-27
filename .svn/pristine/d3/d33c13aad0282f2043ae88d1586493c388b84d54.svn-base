@@ -1,0 +1,46 @@
+import { Injectable } from '@angular/core';
+import {  DatePipe  } from '@angular/common'
+/**
+ * 公共服务
+ */
+@Injectable()
+export class CommonService {
+  
+ //标题
+  public titleObj = {
+      title: '智店宝数据罗盘'
+  }
+ 
+  
+
+  constructor(private datePipe: DatePipe) { }
+
+
+//   getTitle (){
+//       return this.title;
+//   }
+
+//    setTitle (title){
+//     this.title = title;
+//    }
+ /**
+  * 获取当前时间
+  */
+ public  getCurrentTimes  ()  {
+    let weekArray = new Array('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+    let myDate = new Date(new Date);
+    let week = weekArray[myDate.getDay()];
+ 
+    let dateStr:string = this.datePipe.transform(new Date(),'yyyy-MM-dd hh:mm:ss');
+    return `${dateStr} ${week}`;
+  }
+
+  //计算屏幕大小
+  getWindHeight (){
+    return {
+        width : document.documentElement.clientWidth,
+        height : document.documentElement.clientHeight
+    } 
+  }
+
+}

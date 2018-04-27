@@ -1,0 +1,40 @@
+<div class="brand-head">
+    <h1 class="brand-head-til" att.data-text="数据">{{ titleObj.title}}</h1>
+    <h3 class="brand-head-time">{{tiem}}</h3>
+</div>
+
+<div class="brand-wrap set">
+    <p class="brand-til-big">基础设置</p>
+    <div class="brand-til-set mt10">
+        <label class="c-blue">看板标题：</label>
+        <input type="text" class="input brand-til-set-input" placeholder="智店宝数据罗盘" [(ngModel)]="setTitle" />
+        <label class="ml10 c-white-o">*只对本机生效，不会影响其他看板</label>
+    </div>
+    <p class="brand-til-big mt30">数据版块设置</p>
+    <ul class="brand-list clearfix">
+        <li class="brand-list-item" *ngFor="let item of listCard">
+            <div class="brand-list-til">
+                <label class="brand-list-til-txt">{{item.title}}</label>
+                <span class="brand-list-til-checkbox">
+                    <input type="checkbox" [(ngModel)]="item.isCheckBox" class="slic-checkbox" name="name1" />
+                </span>
+            </div>
+            <div class="brand-list-con">
+                {{item.conText}}
+                <span class="brand-list-con-set" (click)="set(item)">设置</span>
+            </div>
+        </li>
+
+    </ul>
+    <!--模块列表 end-->
+
+</div>
+<!--brand-wrap end-->
+<div class="brnad-wrap-btms">
+    <button type="button" class="brnad-set-btn" (click)="goReturn()">返回</button>
+    <button type="button" class="brnad-set-btn" (click)="save()">保存</button>
+</div>
+
+<div class="add-transfer">
+    <app-set-model  (closeModel)="closeModel($event)" [modelinfo] ="setModeluser" (saveModel)="saveModel($event,param)"  *ngIf="showSetModel"></app-set-model>
+</div>

@@ -1,0 +1,49 @@
+import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonService } from '../../services/common.service'
+ import { EditService } from './edit.service';
+
+@Component({
+    selector: 'app-edit',
+    templateUrl: './edit.component.html',
+    styleUrls: ['./edit.component.css']
+})
+
+export class EditComponent implements OnInit {
+    public tiem = this.commonService.getCurrentTimes();
+    public titleObj = this.commonService.titleObj;
+    public interValObj;
+    public setTitle: string;
+    public listCard = this.editService.listCard;
+
+    constructor(public commonService: CommonService,
+                public router: Router,
+                public editService: EditService) { }
+
+    ngOnInit() {
+        this.downTime();
+    }
+
+    //保存标题
+    save() {
+        this.commonService.titleObj.title = this.setTitle;
+    }
+
+    goReturn(){
+        this.router.navigateByUrl('main');
+    }
+
+
+    //倒计时
+    downTime() {
+        this.interValObj = setInterval(() => {
+            this.tiem = this.commonService.getCurrentTimes();
+        }, 990)
+    }
+    //退出情况
+    ngOnDestroy() {
+        clearInterval(this.interValObj);
+    }
+
+
+}

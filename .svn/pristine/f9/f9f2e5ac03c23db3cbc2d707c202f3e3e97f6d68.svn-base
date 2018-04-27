@@ -1,0 +1,41 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2017",
+            "dom"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "node_modules/@op/smile/**/*",
+        // "node_modules/@op/jqwidgets-scripts/**/*",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxvalidator.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxswitchbutton.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxdatetimeinput.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxmaskedinput.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxnotification.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxtooltip.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxmaskedinput.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxprogressbar.ts",
+        "node_modules/@op/jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts"
+    ]
+}

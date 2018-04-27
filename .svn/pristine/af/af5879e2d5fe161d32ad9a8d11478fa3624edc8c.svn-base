@@ -1,0 +1,171 @@
+ 
+		<!--蒙版 -->
+		<!--<div class="brand-popup"></div>
+		-->
+			
+		<!--弹出层 -->
+		<!--<div class="brand-alert">
+			<div class="brand-alert-til">批发商交易金额排行 <i class="alert-close"></i></div>
+			<div class="brand-alert-con">
+				<div class="slic-row">
+		     		<div class="til">刷新频率：</div> 
+		     		<div class="con">每 <input type="text" class="input alert-input-small"  placeholder="5"/> 秒刷新一次</div> 
+			    </div>
+			    <div class="slic-row">
+		     		<div class="til">统计区域：</div> 
+		     		<div class="con">
+		     			<select class="alert-select">
+						  <option value ="volvo" class="alert-select-item">广东省深圳市龙岗区</option>
+						  <option value ="saab" class="alert-select-item">广东省深圳市龙华区</option>
+						  <option value="opel" class="alert-select-item">广东省深圳市南山区</option>
+						  <option value="audi" class="alert-select-item">广东省深圳市福田区</option>
+						</select>
+		     		</div> 
+			    </div>
+			    <div class="slic-row">
+		     		<div class="til">调整大小：</div> 
+		     		<div class="con">
+		     			<input type="radio" class="slic-radio" name="name1"/> 大版 
+		     			<input type="radio" class="slic-radio" name="name2"/> 小版 
+		     		</div> 
+			    </div>
+			    <div class="slic-row">
+		     		<div class="til">可能会：</div> 
+		     		<div class="con"><input type="text" class="input alert-input-small"  placeholder="15"/> </div> 
+			    </div>
+			</div>
+			<div class="brand-alert-foot">
+				<button type="button" class="brnad-set-btn">返回</button>
+				<button type="button" class="brnad-set-btn">保存</button>
+			</div>
+		</div>-->
+			
+		<!--brand-alert end-->
+		
+		<div class="brand-head">
+			<h1 class="brand-head-til" att.data-text ="数据">{{ titleObj.title }}</h1>
+			<h3 class="brand-head-time">{{tiem}}</h3>
+		</div>
+		
+		<div class="brand-wrap set">
+			<p class="brand-til-big">基础设置</p>
+			<div class="brand-til-set mt10">
+				<label class="c-blue">看板标题：</label>
+                <input type="text" class="input brand-til-set-input" placeholder="智店宝数据罗盘" 
+                [(ngModel)]="setTitle"/>
+				<label class="ml10 c-white-o">*只对本机生效，不会影响其他看板</label>
+			</div>
+			<p class="brand-til-big mt30">数据版块设置</p>
+			<ul class="brand-list clearfix">
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">总览</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" class="slic-checkbox" name="name1"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示当前的实时客户数、商圈数；今日交易单数、交易金额；今
+						日拜访客户数、新增客户数、下单客户数
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">分时交易</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						通过折线图，列示今日每个小时的销售数据，了解销售峰谷
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">交易统计</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						按周期统计本期交易金额、交易单数、活跃客户数，并与上期做对比，周期可选周或月
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">批发商交易排行</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示本周期内的批发商交易金额排行版，周期可选日、周、月，可以配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">全栈经理业绩排行</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示本周期内的归属全栈经理的交易金额排行榜，周期可选日、周、月，可以配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">品类销售排行</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示本周期内的品类商品交易金额排行榜，周期可选日、周、月，可以配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">商品销售排行</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示本周期内的商品交易金额排行榜，周期可选日、周、月，可以配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">实时订单</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示今日最新的订单信息，可以配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">实时拜访</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示今日最新的拜访签到信息，可配置列示多少条
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+				<li class="brand-list-item">
+					<div class="brand-list-til">
+						<label class="brand-list-til-txt">重点区域统计</label>
+						<span class="brand-list-til-checkbox"><input type="checkbox" checked="checked" class="slic-checkbox" name="name2"/></span>
+					</div>
+					<div class="brand-list-con">
+						列示指定区域的各个下级区域，在周期内的交易数据，重点区域可以选择省、市两级，周期可选择周或月
+						<span class="brand-list-con-set">设置</span>
+					</div>
+				</li>
+			</ul><!--模块列表 end-->
+			
+		</div>	<!--brand-wrap end-->
+		<div class="brnad-wrap-btms">
+			<button type="button" class="brnad-set-btn">返回</button>
+			<button type="button" class="brnad-set-btn" (click)="save()">保存</button>
+		</div>
+		
+ 

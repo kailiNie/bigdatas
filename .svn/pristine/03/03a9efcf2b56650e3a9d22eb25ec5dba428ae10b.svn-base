@@ -1,0 +1,902 @@
+/* 
+ * date: 20180412 
+ * author: herj
+ * description: 大数据看板 数据平台 css
+ */
+
+ /* body {
+	background: url(../img/board_bg.png) no-repeat;
+	background-size:100% 100%;
+} */
+.brand-wrap.main {
+    color: #fff;
+}
+/* .brand-wrap-item1 {
+	width: 25%;
+	height: 25%;
+}
+.brand-wrap-item2 {
+	width: 25%;
+	height: 50%;
+}
+.brand-wrap-item3 {
+	width: 50%;
+	height: 25%;
+}
+.brand-wrap-item4 {
+	width: 50%;
+	height: 50%;
+}
+.brand-wrap-item5 {
+	width: 50%;
+	height: 75%;
+} */
+.brandMian-til-big {
+	width: 100%;
+	height: 40px;
+	padding:0 20px ;
+	line-height: 40px;
+	font-size: 22px;
+	color: #69e1ff;
+	background-color: #69cfff;
+	background: url(../../../../assets/imgs/brand-til-bg1.png) no-repeat;
+	background-size: 100% 100%;
+}
+/*头部标题和时间标题媒体查询*/
+@media only screen and (max-width:1600px ) {
+	.brandMian-til-big {
+		height: 30px;
+		padding:0 20px ;
+		line-height: 30px;
+		font-size: 16px;
+	}
+}
+/*4个边角图标*/
+.borad_corner {
+	position: absolute;
+	z-index: 3;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(../../../../assets/imgs/borad_corner.png) no-repeat;
+	
+}
+.borad_corner_1 {
+	top: -4px;
+	left: -4px;
+	background-position: 0 0;
+}
+.borad_corner_2 {
+	bottom: -4px;
+	left: -4px;
+	background-position: 0 -16px;
+}
+.borad_corner_3 {
+	top: -4px;
+	right: -4px;
+	background-position: 0 -48px;
+}
+.borad_corner_4 {
+	bottom: -4px;
+	right: -4px;
+	background-position: 0 -32px;
+}
+
+
+/*实时拜访组件区域 -----------------------*/
+.visit-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+
+.visit-list{
+	width: 100%;
+	height: calc(100% - 10px);
+}
+.visit-list li {
+	position: relative;
+	height: 20%;
+	line-height: 30px;
+	font-size: 16px;
+	padding-left:10px;
+}
+.visit-list li::before {
+	content: '';
+	position: absolute;
+	z-index: 3;
+	width: 6px;
+	height: 6px;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: #69e1ff;
+}
+/*显示大图*/
+.visit-panel.big .visit-list li {
+	height: 10%;
+}
+/*实时拜访组件区域  媒体查询  */
+@media only screen and (min-height:600px ) {
+	.visit-list li {
+		line-height: 22px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+	.visit-list li{
+		line-height: 25px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.visit-list li {
+		line-height: 25px;
+		font-size: 13px;
+	}
+}
+@media only screen and (min-height:800px ) {
+	.visit-list li {
+		line-height: 25px;
+		font-size: 14px;
+	}
+	.visit-panel.big .visit-list li {
+		line-height: 28px;
+	}
+}
+@media only screen and (min-height:900px ) {
+	.visit-list li {
+		line-height: 30px;
+		font-size: 14px;
+	}
+}
+
+/*批发商交易额排行组件区域-----------------------*/
+.tradingVolume-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+
+.tradingVolume-list{
+	width: 100%;
+	height: 100%;
+}
+.tradingVolume-list li {
+	position: relative;
+	height: 33.3%;
+	line-height: 22px;
+	font-size: 16px;
+	padding: 0 10px;
+	margin-bottom: 5px;
+}
+.tradingVolume-panel.big .tradingVolume-list li {
+	height: 16.67%;
+}
+.tradingVolume-top {
+	width: 100%;
+	height: 20px;
+}
+/*进度条*/
+.tradingVolume-process-wrap {
+	float: left;
+	width: calc(100% - 90px );
+	height: 100%;
+}
+.tradingVolume-process {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	border:1px solid #417aa1;
+	border-radius: 10px;
+	background-color: #192542;
+	background: transparent;
+	transition: all .5s;
+}
+.tradingVolume-process-bar {
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	z-index: 3;
+	width: calc(100% - 8px);
+	height: 12px;
+	border-radius: 10px;
+	background: #2774bc; 
+	transition: all .5s; 
+	background: -webkit-linear-gradient(left, #2774bc, #69ceff);
+	background: -moz-linear-gradient(right, #2774bc, #69ceff); 
+	background: linear-gradient(to right, #2774bc , #69ceff); 
+	filter:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#2774bc,endColorStr=#69ceff);
+	
+}
+/*金额*/
+.tradingVolume-num {
+	width: 86px;
+	text-align: right;
+	color: #69cfff;
+}
+.tradingVolume-btm {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+}
+/*批发商交易额排行组件区域  媒体查询  */
+@media only screen and (min-height:600px ) {
+
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	.tradingVolume-btm {
+		height: 12px;
+		line-height: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	
+	.tradingVolume-top {
+		height: 16px;
+	}
+	.tradingVolume-process {
+		height: 16px;
+	}
+	.tradingVolume-process-bar {
+		height: 8px;
+	}
+	.tradingVolume-btm {
+		height: 14px;
+		line-height: 14px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	.tradingVolume-top {
+		height: 16px;
+	}
+	.tradingVolume-btm {
+		height: 16px;
+		line-height: 16px;
+	}
+	
+}
+@media only screen and (min-height:800px ) {
+
+	.tradingVolume-list li{
+		font-size: 13px;
+	}
+	.tradingVolume-top {
+		height: 20px;
+	}
+	.tradingVolume-process {
+		height: 20px;
+	}
+	.tradingVolume-process-bar {
+		left: 4px;
+		top: 3px;
+		height: 12px;
+	}
+}
+@media only screen and (min-height:900px ) {
+	.tradingVolume-list {
+		padding-top: 5px;
+	}
+	.tradingVolume-list li{
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+	.tradingVolume-top {
+		height: 25px;
+	}
+}
+
+/*实时订单组件区域-----------------------*/
+.order-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+
+
+.order-list{
+	width: 100%;
+	height: calc(100% - 10px);
+}
+.order-list li {
+	position: relative;
+	height: 20%;
+	line-height: 30px;
+	font-size: 16px;
+	padding-left:10px;
+}
+.order-list li::before {
+	content: '';
+	position: absolute;
+	z-index: 3;
+	width: 6px;
+	height: 6px;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: #69e1ff;
+}
+/*显示大图*/
+.order-panel.big .order-list li {
+	height: 10%;
+}
+.order-list-time {
+	box-sizing: border-box;
+	float: left;
+	width: 60px;
+	padding-right: 20px;
+}
+.order-list-area {
+	box-sizing: border-box;
+	float: left;
+	width: 50px;
+	padding-right: 20px;
+}
+.order-list-name {
+	box-sizing: border-box;
+	float: left;
+	width: calc(100% - 210px);
+}
+.order-list-money {
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width: 90px;
+	text-align: right;
+}
+/*实时订单 媒体查询  */
+@media only screen and (min-height:600px ) {
+	.order-list li {
+		line-height: 22px;
+		font-size: 12px;
+	}
+	.order-panel.big .order-list li {
+		line-height: 24px;
+	}
+
+}
+@media only screen and (min-height:720px ) {
+	.order-list li {
+		line-height: 18px;
+		font-size: 12px;
+	}
+	.order-panel.big .order-list li {
+		line-height: 26px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.order-list li {
+		line-height: 21px;
+		font-size: 13px;
+	}	
+}
+@media only screen and (min-height:800px ) {
+	.order-list li {
+		line-height: 23px;
+		font-size: 14px;
+	}
+}
+@media only screen and (min-height:900px ) {
+	.order-list {
+		padding-top: 10px;
+	}
+	.order-list li {
+		line-height: 30px;
+		font-size: 14px;
+	}
+	
+	.order-panel.big .order-list li {
+		line-height: 30px;
+	}
+}
+/*品类销售排行（深圳）组件区域-----------------------*/
+.category-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+
+.category-list{
+	width: 100%;
+	height: 100%;
+}
+.category-list li {
+	position: relative;
+	height: 20%;
+	line-height: 20%;
+	font-size: 16px;
+}
+
+.category-list-name {
+	float: left;
+	display: block;
+	width: 80px;
+	height: 16px;
+	line-height: 16px;
+}
+.category-list-bar-wrap{
+	float: left;
+	display: block;
+	width: calc(100% - 170px);
+	height: 12px;
+}
+.category-list-bar{
+	display: block;
+	width: 100%;
+	height: 10px;
+	border-radius: 10px;
+	transition: all .5s;
+}
+.category-list-bar.category-list-bar1{
+	background: #ffd954;
+}
+.category-list-bar.category-list-bar2{
+	background: #f08c1a;
+}
+.category-list-bar.category-list-bar3{
+	background: #50e9e6;
+}
+.category-list-bar.category-list-bar4{
+	background: #69cfff;
+}
+.category-list-bar.category-list-bar5{
+	background: #3d96cc;
+}
+.category-list-bar.category-list-bar6{
+	background: #ff7234;
+}
+.category-list-bar.category-list-bar7{
+	background: #36e8b8;
+}
+.category-list-bar.category-list-bar8{
+	background: #13d895;
+}
+.category-list-bar.category-list-bar9{
+	background: #34abff;
+}
+.category-list-bar.category-list-bar10{
+	background: #2674bb;
+}
+.category-list-money {
+	float: right;
+	display: block;
+	width: 90px;
+	height: 16px;
+	line-height: 16px;
+	text-align: right;
+	color: #69cfff;
+}
+
+.category-panel.big .category-list li {
+	height: 10%;
+}
+
+/*品类销售排行/全栈经理业绩排行  媒体查询  */
+@media only screen and (min-height:600px ) {
+	.category-list li {
+		line-height: 22px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+	.category-list li {
+		line-height: 25px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.category-list li {
+		line-height: 25px;
+		font-size: 13px;
+	}
+	
+}
+@media only screen and (min-height:800px ) {
+	.category-list {
+		padding-top: 10px;
+	}
+	.category-list li {
+		line-height: 30px;
+		font-size: 13px;
+	}
+	
+}
+@media only screen and (min-height:900px ) {
+	.category-list li {
+		line-height: 35px;
+		font-size: 13px;
+	}
+	
+}
+
+/*品类销售排行（深圳）组件区域-----------------------*/
+.transaction-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+.transaction-date {
+	box-sizing: border-box;
+	width: 100%;
+	height: 20px;
+	font-size: 12px;
+}
+.this-week {
+	float: right;
+	width: 40px;
+	height: 12px;
+	margin-right: 20px;
+	color: #69e1ff;
+}
+.this-week-icon {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #69e1ff;
+}
+.last-week {
+	position: relative;
+	float: right;
+	width: 40px;
+	height: 12px;
+	color: #13d895;
+}
+.last-week-icon {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #13d895;
+}
+/*交易图形列表*/
+.transaction-list{
+	width: 100%;
+	height: calc(100% - 20px);
+}
+.transaction-list li {
+	float: left;
+	width: 33.3%;
+	height: 100%;
+}
+.transaction-bar-wrap {
+	position: relative;
+	width: 66px;
+	height: calc(100% - 20px);
+	margin: auto;
+}
+/*左侧条柱，本周*/
+.transaction-thisWeek{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	width: 28px;
+	height: calc(100% - 15px);
+	color: #69e1ff;
+}
+.transaction-thisWeek-wrap {
+	position: absolute;
+	z-index: 3;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 28px;
+	max-height: 100%;
+	background-color: #69e1ff;
+	transition: all .5s;
+}
+.transaction-thisWeek-bar{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.transaction-thisWeek-bar-txt {
+	position: absolute;
+	z-index: 9;
+	top: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 35px;
+	height: 15px;
+	font-size: 12px;
+	color:#69e1ff ;
+	font-size: 11px;
+	text-align: center;
+}
+
+/*右侧条柱，上周*/
+.transaction-lastWeek{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+	width: 28px;
+	height: calc(100% - 15px);
+	color: #69e1ff;
+}
+.transaction-lastWeek-wrap {
+	position: absolute;
+	z-index: 3;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 28px;
+	max-height: 100%;
+	background-color: #13d895;
+	transition: all .5s;
+}
+.transaction-lastWeek-bar{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.transaction-lastWeek-bar-txt {
+	position: absolute;
+	z-index: 9;
+	top: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 35px;
+	height: 15px;
+	font-size: 12px;
+	color:#13d895 ;
+	font-size: 11px;
+	text-align: center;
+}
+
+/*文字标题*/
+.transaction-list-name {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	
+}
+
+/*品类销售排行/全栈经理业绩排行  媒体查询  */
+@media only screen and (min-height:600px ) {
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:760px ) {
+
+	.transaction-list-name {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-height:800px ) {
+	.transaction-list-name {
+		font-size: 14px;
+	}
+	
+}
+@media only screen and (min-height:900px ) {
+	.transaction-list-name {
+		font-size: 16px;
+	}
+}
+
+/*今日总览组件区域-----------------------*/
+.overview-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+.overview-list {
+	width: 100%;
+	height: 100%;
+}
+.overview-list li{
+	float: left;
+	width: 25%;
+	height: 50%;
+}
+.overview-list li.big{
+	float: left;
+	width: 50%;
+	height: 50%;
+}
+
+.overview-list-txt {
+	font-size: 14px;
+}
+.overview-list-numBig {
+	font-weight: bold;
+	font-size: 40px;
+}
+.overview-panel .overview-list-num {
+	font-size: 12px;
+}
+.overview-panel .overview-list-num1 {
+	color: #50e9e6;
+}
+.overview-panel .overview-list-num2 {
+	color: #13d895;
+}
+.overview-panel .overview-list-num3 {
+	color: #f08c1a;
+}
+.overview-panel .overview-list-num4 {
+	color: #36e8b8;
+}
+.overview-panel .overview-list-num5 {
+	color: #69e1ff;
+}
+.overview-panel .overview-list-num6 {
+	color: #69e1ff;
+}
+.overview-panel .overview-list-num7 {
+	color: #ffd954;
+}     
+/*品类销售排行/全栈经理业绩排行  媒体查询  */
+
+@media only screen and (max-width:1079px ) {
+	.overview-list-numBig {
+		font-size: 24px;
+	}
+}
+@media only screen and (min-width:1280px ) {
+	.overview-list-numBig {
+		font-size: 32px;
+	}
+}
+@media only screen and (min-width:1360px ) {
+	.overview-list-numBig {
+		font-size: 36px;
+	}
+}
+@media only screen and (min-width:1400px ) {
+	.overview-list-numBig {
+		font-size: 40px;
+	}
+}
+   
+/*重点区域组件*/
+.keyArea-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 40px);
+	/* padding: 10px; */
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}       
+
+/*小视图小样*/
+.keyArea-con {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	box-sizing: border-box;
+	width: 80%;
+	height: 220px;
+	border: 1px solid #69e1ff;
+	border-left: none;
+}
+.keyArea-con::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	background: url(../../../../assets/imgs/keyArea-leftBar.png) left center no-repeat;
+	margin-left: -10px;
+}
+
+.keyArea-con-list {
+	width: 100%;
+	height: 100%;
+}
+.keyArea-con-list li{
+	box-sizing: border-box;
+	float: left;
+	width: 16%;
+	height: 100%;
+	font-size: 16px;
+}
+.keyArea-con-list li:first-child{
+	color: #69e1ff;
+}
+.keyArea-con-list li:last-child{
+	float: left;
+	width: 20%;
+}
+.keyArea-con-row1 {
+	color: #69e1ff;
+}
+.keyArea-con-list-col {
+	box-sizing: border-box;
+	width: 100%;
+	height: 16%;
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+}
+.keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: left;
+}
+
+/*大视图转换*/
+.keyArea-panel.big .keyArea-con{
+	position: static;
+	box-sizing: border-box;
+	width: 100%;
+	height: 33%;
+	border: none
+}
+.keyArea-panel.big .keyArea-con::before {
+	content: '';
+	display: none;
+}
+.keyArea-panel.big .keyArea-til {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	background: #2464a3;
+}
+.keyArea-panel.big .keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: center;
+}
+
+@media only screen and (max-width:1368px ) {
+	.keyArea-con-list li {
+		font-size: 13px;
+	}
+}
+@media only screen and (max-width:1279px ) {
+	.keyArea-con-list li {
+		font-size: 11px;
+	}
+	.keyArea-con-row1 .keyArea-con-list-col {
+		padding-left: 10px;
+	}
+}

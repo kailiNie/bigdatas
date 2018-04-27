@@ -1,0 +1,217 @@
+/**
+ * niekl
+ * list services
+ * 发送http请求
+ */
+
+import { Injectable } from '@angular/core';
+//请求
+import { SuiHttpService } from '@op/smile/services/https/sui-http.service';
+import { LocalConfig } from '@op/smile/global/sui-local-config';
+import { RequestMethod } from '@angular/http';
+import { ModalService } from '@op/smile/components/modal/modal.service'
+import { forEach } from '@angular/router/src/utils/collection';
+ 
+
+@Injectable()
+export class ListService {
+
+    constructor(public httpUtils: SuiHttpService,
+             public ModalService: ModalService) { }
+
+    //获取实时拜访数据
+    visitQuery() {
+        var option = {
+            url: 'saleman/visit/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+
+            }
+        }
+        return this.getHttp(option)
+    }
+
+    //重点区域
+    statisticQuery() {
+        var option = {
+            url: 'keyarea/statistic/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+
+            }
+        }
+        return this.getHttp(option)
+    }
+    //交易统计
+    transactionSun(){
+        var option = {
+            url: 'trade/statistic/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+            }
+        }
+        return this.getHttp(option)
+    }
+    //销售金额排行
+    saleQuery(){
+        var option = {
+            url: 'sale/amount/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+
+            }
+        }
+        return this.getHttp(option)
+    }
+
+    //商品销售排行
+    goodsQuery(){
+        var option = {
+            url: 'sale/goods/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+            }
+        }
+        return this.getHttp(option)
+    }
+
+        //全账经理业绩排行
+    saleinfoQuery(){
+        var option = {
+                url: 'saleman/saleinfo/query',
+                rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+                isPublish: true,
+                globalLoad: true,
+                bodyParam: {
+                }
+        }
+        return this.getHttp(option)
+    }
+    //品类销售排行 
+    categoryQuery(){
+        var option = {
+            url: 'sale/category/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+            }
+        }
+         return this.getHttp(option)
+    }
+
+      //今日总览
+    overviewQuery(){
+        var option = {
+            url: 'today/overview/query',
+            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            isPublish: true,
+            globalLoad: true,
+            bodyParam: {
+            }
+        }
+         return this.getHttp(option)
+    }
+
+        //分时交易
+    hourlytradeQuery(){
+            var option = {
+                url: 'hourlytrade/query',
+                rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+                isPublish: true,
+                globalLoad: true,
+                bodyParam: {
+                }
+            }
+             return this.getHttp(option)
+        }
+
+    //基础http服务
+    getHttp(option: any): any {
+        return new Promise((resolve, reject) => {
+            this.httpUtils.request(option).subscribe(res => {
+                let { retCode, message } = res
+                if (retCode != 0) {
+                    this.ModalService.error(message);
+                    //reject(res); 
+                    return;
+                };
+                resolve(res);
+            });
+        })
+    }
+
+    //格式化数据进入带边框组件数据 标题 副标题 
+    formaDataSaleinfo(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            let obj = {'title':value.areaname,"proValue":`${Math.floor(Math.random()*100+1)}%`,"barValue":value.totalamount};
+            returnArr.push(obj);
+        })
+        return returnArr;
+    }
+
+    //格式化销售排行
+    formaDataCategory(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            let obj = {'title':value.catname,"proValue":`${Math.floor(Math.random()*100+1)}%`,"barValue":value.totalamount};
+            returnArr.push(obj);
+        })
+        return returnArr;
+    }
+
+    //格式化批发商交易额排行
+    formaDataSale(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            let obj = {'title':value.vendername,"proValue":`${Math.floor(Math.random()*100+1)}%`,"barValue":value.totalamount};
+            returnArr.push(obj);
+        })
+        return returnArr;
+    }
+    //商品销售排行
+     
+    formaDatagoods(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            let obj = {'title':value.goodsname,"proValue":`${Math.floor(Math.random()*100+1)}%`,"barValue":value.totalamount};
+            returnArr.push(obj);
+        })
+        return returnArr;
+    }
+
+ 
+
+    formaDatamap(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            let obj = {'name':value.areaname,"value": Math.floor(Math.random()*10000+1)};
+            returnArr.push(obj);
+        })
+        return returnArr;
+    }
+
+    formaDataHourlytrade(array){
+        var returnArr = [];
+        array.forEach((value,index)=>{
+            returnArr.push(value.salemoney);
+        })
+        return returnArr;
+    }
+
+   
+
+
+
+}

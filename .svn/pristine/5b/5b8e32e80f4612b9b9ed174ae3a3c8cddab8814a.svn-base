@@ -1,0 +1,44 @@
+ 
+
+    <ul class="tradingVolume-list">
+        <li>
+            <div class="tradingVolume-top clearfix">
+                <div class="tradingVolume-process-wrap">
+                    <span class="tradingVolume-process">
+                        <span class="tradingVolume-process-bar"  style="width: 100%;"></span>
+                    </span>
+                </div>
+                <span class="tradingVolume-num fr">￥876,543.00</span>
+            </div>
+            <div class="tradingVolume-btm tx-overflow">
+                深圳大富豪商贸有限公司深圳大富豪商贸有限公司深圳大富豪商贸有限公司深圳大富豪商贸有限公司
+            </div>
+        </li>
+        <li>
+            <div class="tradingVolume-top clearfix">
+                <div class="tradingVolume-process-wrap">
+                    <span class="tradingVolume-process" >
+                        <span class="tradingVolume-process-bar" style="width: 60%;"></span>
+                    </span>
+                </div>
+                <span class="tradingVolume-num fr">￥6,654.00</span>
+            </div>
+            <div class="tradingVolume-btm tx-overflow">
+                深圳好生意批发部
+            </div>
+        </li>
+        <li>
+            <div class="tradingVolume-top clearfix">
+                <div class="tradingVolume-process-wrap">
+                    <span class="tradingVolume-process" >
+                        <span class="tradingVolume-process-bar" style="width: 30%;"></span>
+                    </span>
+                </div>
+                <span class="tradingVolume-num fr">￥5,354.00</span>
+            </div>
+            <div class="tradingVolume-btm tx-overflow">
+                深圳荣昌批发部
+            </div>
+        </li>
+    </ul>
+ 

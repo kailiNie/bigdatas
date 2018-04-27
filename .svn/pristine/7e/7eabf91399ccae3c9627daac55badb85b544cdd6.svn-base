@@ -1,0 +1,139 @@
+/**
+ * 登录模块
+ */
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild,OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonServices } from '@op/smile/services/groups/common-services.module';
+import { SuiValidator, ValidatorRule } from '@op/smile/components/validator/sui-validator';
+import { Md5 } from 'ts-md5/dist/md5';
+import { LoginService } from './login.service';
+import { LoginService  as appLogin } from '@op/smile/apps/login/login.service';
+import { ClientSessionDataService, SuiUser, SuiSiteConfig } from '@op/smile/business-components/sui-frameworks/client-session-data.service';
+ 
+
+// import { SrvRecord } from 'dns';
+// import { UserInfo } from '@op/smile/apps/login/login-mode.component';
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+})
+
+
+// globalService
+export class LoginComponent implements OnInit {
+    public sendCodeMsg = '获取验证码';
+    public isDisabled = false;
+    public intervalid;
+    public UserInfo: any = {
+        userMobile: '',
+        validcode: '',
+        pswd: '',
+    };
+
+    /** 加载层 */
+    loadSpin: any = {
+        isOpen: false,
+        message: '登录中...'
+    };
+
+    mobileValidator: Array<ValidatorRule | string>;
+
+    constructor(
+            private loginServer: LoginService,
+            private appLogin : appLogin,
+            private utils: CommonServices,
+            private clientSessionData: ClientSessionDataService,
+            private router :  Router
+    ) {}
+
+    ngOnInit() {
+        setTimeout(() => {
+            this.initValidator();
+        }, 0);
+    }
+
+    //退出页面
+    ngOnDestroy(){
+        clearInterval(this.intervalid);
+    }
+
+    @Output() doLogin = new EventEmitter();
+    @Output() doForgetPsd = new EventEmitter();
+    @ViewChild("el_validator") el_validator: SuiValidator;
+    rootValidators: ValidatorRule[];
+  
+    /**
+     * 登录
+     * 发送 登录信息
+     */
+    login() {
+         this.router.navigateByUrl('/main');
+        // this.router.navigate(['/login']);
+        // this.loginServer.checkVerCode(this.UserInfo).then((res) => {
+        //     this.doLogins(this.UserInfo)
+        // })
+    }
+
+    //获取验证码 获取成功
+    getViewCode() {
+        this.loginServer.getVerCode('18300006546').then((res) => {
+           this.countDown(60);
+        })
+    }
+
+     private countDown(time: number) {
+        this.isDisabled = true;
+        this.intervalid = setInterval(() => {
+            time--;
+            this.sendCodeMsg = `${time}秒后重新获取`;
+            if (time == 0) {
+                this.isDisabled = false;
+                this.sendCodeMsg = '重新获取';
+                clearInterval(this.intervalid)
+            }
+        }, 1000)
+    }
+
+    /** 校验规则 */
+    private initValidator(): void {
+        this.mobileValidator = [
+            'required'
+        ]
+    }
+
+        /** 登录 */
+        doLogins(userInfo: any) {
+            let _userInfo = Object.assign({}, userInfo, {
+                pswd: '0x' + Md5.hashStr(userInfo.pswd)
+            });
+   
+            this.loadSpin.isOpen = true;
+            this.appLogin.doLogin(_userInfo).subscribe(response => {
+                this.loadSpin.isOpen = false;
+                if (response.retCode !== 0) {
+                    this.UserInfo.errorMessage = "登录失败: " + response.message;
+                    return;
+                } else {
+                    this.onAfterLoginSuccess(response.data.result);
+                   
+                }
+            });
+        }
+    
+        /**
+         * 登录成功
+         */
+        private onAfterLoginSuccess(data: any) {
+            let user: SuiUser = this.utils.classUtil.clone(data, ["telePhone", "realName", /* "fileServerAddr", */ "qq", "email", "loginEid", "userId", "fullname", "ename"]) as SuiUser;
+            user = Object.assign({}, user, this.UserInfo, {
+                pswd: '0x' + Md5.hashStr(this.UserInfo.pswd)
+            });
+            this.clientSessionData.cacheUserInfo(user);
+            let token: string = data.idToken;
+            this.clientSessionData.cacheToken(token, this.UserInfo.loginName);
+       
+        }
+
+
+}

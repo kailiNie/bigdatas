@@ -1,0 +1,11 @@
+ 
+    <ul class="visit-list">
+        <li class="tx-overflow" *ngFor="let item of optionData">
+            <span class="mr20">{{item.visittime}}</span>
+            <span class="mr20">{{item.areaname}}</span>
+            <span class="mr20">{{item.managername}}</span>
+            <span>{{item.customername}}</span>
+        </li>
+        
+    </ul>
+ 

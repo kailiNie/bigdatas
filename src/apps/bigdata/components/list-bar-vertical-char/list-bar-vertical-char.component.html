@@ -1,0 +1,29 @@
+<div class="transaction-date">
+    <div class="last-week"><i class="last-week-icon"></i>上周</div>
+    <div class="this-week"><i class="this-week-icon"></i> 本周</div>
+</div>
+<ul class="transaction-list clearfix">
+    <li *ngFor="let item of optionData">
+        <div class="transaction-bar-wrap clearfix">
+            <div class="transaction-thisWeek">
+                <div class="transaction-thisWeek-wrap"  [ngStyle]="{'height': item.thisweekProValue}">
+                    <div class="transaction-thisWeek-bar">
+                        <p class="transaction-thisWeek-bar-txt">{{item.thisweek}}</p>
+                    </div>
+                    
+                </div>
+            </div>	<!--本周条柱  end-->
+ 
+            <div class="transaction-lastWeek">
+                <div class="transaction-lastWeek-wrap"  [ngStyle]="{'height': item.lastweekProValue}">
+                    <div class="transaction-lastWeek-bar">
+                        <p class="transaction-lastWeek-bar-txt">{{item.lastweek}}</p>
+                    </div>
+                </div>
+            </div>	<!--上周条柱 end-->
+        </div><!--transaction-bar-wrap end-->
+        <div class="transaction-list-name">{{item.title}}</div>
+    </li>
+    
+ 
+</ul>		

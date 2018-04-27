@@ -1,0 +1,82 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../services/common.service';
+import "../../../../../node_modules/jquery/dist/jquery.js"
+import "../../../../assets/js/jquery.gridster.js"
+declare var $: any
+@Component({
+    selector: 'app-list',
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.css']
+})
+export class ListComponent implements OnInit {
+
+    public tiem = this.commonService.getCurrentTimes();
+
+    public title = this.commonService.titleObj.title;
+ 
+    public gridster;
+    //折线图数据
+    public linkChartOption: any;
+    //map数据
+    public mapOption : any;
+
+    public latticeWidth = this.calMoveWeight(4);
+    public latticeHeight = this.calMoveHeight(4);
+
+    constructor(public commonService: CommonService) { }
+
+    ngOnInit() {
+        //条形图宽度和高度 还需要得到格子大下
+        this.linkChartOption = {
+            width: this.latticeWidth,
+            height: this.latticeHeight *2
+        };
+        this.mapOption = {
+            width: this.latticeWidth * 2,
+            height: this.latticeHeight *2 -30 //减去P的高度
+        };        
+    }
+
+    //页面加载完初始化
+    ngAfterViewInit() {
+        this.gridster = $(".gridster > ul").gridster({
+            widget_margins: [5, 10], //模块的间距 [上下,左右]  
+            widget_base_dimensions: [ this.latticeWidth, this.latticeHeight], //模块的宽高 [宽,高]  
+            min_cols: 4,
+            max_cols: 4,
+            max_size_y: 3,
+            disable: false,
+            avoid_overlapped_widgets: false
+        }).data('gridster');
+    }
+
+
+    confirm(){
+        
+        console.log('进入enter');
+    }
+    /**
+     * 计算每一个移动块的搞
+     * 传入具有几块
+     */
+    calMoveHeight(col): number {
+        let { height } = this.commonService.getWindHeight(); //屏幕的高
+        let colPro = 1/col;//总高度100%计算出每一块的比例
+        return  (height-130)*colPro-5 ;
+    }
+
+      /**
+     * 计算每一个移动块的宽
+     * 传入具有几块
+     */
+    calMoveWeight(col): number {
+        let { width } = this.commonService.getWindHeight(); //屏幕的高
+        let colPro = 1/col;//总高度100%计算出每一块的比例
+        return  (width-130)*colPro-10 ;
+    }
+
+
+    //监控屏幕大小改变
+
+
+}

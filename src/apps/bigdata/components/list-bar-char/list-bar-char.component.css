@@ -1,0 +1,156 @@
+/*批发商交易额排行组件区域-----------------------*/
+.tradingVolume-panel {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 45px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #3f7ba2;
+}
+@media only screen and (max-width:1600px ) {
+	.tradingVolume-panel  {
+		height: calc(100% - 35px);
+	}
+}
+.tradingVolume-list{
+	width: 100%;
+	height: 100%;
+}
+.tradingVolume-list li {
+	position: relative;
+	height: 33.3%;
+	line-height: 22px;
+	font-size: 16px;
+	padding: 0 10px;
+	margin-bottom: 5px;
+}
+.tradingVolume-panel.big .tradingVolume-list li {
+	height: 16.67%;
+}
+.tradingVolume-top {
+	width: 100%;
+	height: 20px;
+}
+/*进度条*/
+.tradingVolume-process-wrap {
+	float: left;
+	width: calc(100% - 90px );
+	height: 100%;
+	box-sizing: border-box;
+	border:1px solid #417aa1;
+	border-radius: 10px;
+	background-color: #192542;
+	background: transparent;
+	transition: all .5s;
+}
+.tradingVolume-process {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	width: calc(100% - 8px);
+	height: 100%;
+	
+}
+.tradingVolume-process-bar {
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	z-index: 3;
+	width: calc(100% - 8px);
+	height: 12px;
+	border-radius: 10px;
+	background: #2774bc; 
+	transition: all .5s; 
+	background: -webkit-linear-gradient(left, #2774bc, #69ceff);
+	background: -moz-linear-gradient(right, #2774bc, #69ceff); 
+	background: linear-gradient(to right, #2774bc , #69ceff); 
+	filter:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#2774bc,endColorStr=#69ceff);
+	
+}
+/*金额*/
+.tradingVolume-num {
+	width: 86px;
+	height: 14px;
+	line-height: 14px;
+	text-align: right;
+	color: #69cfff;
+}
+.tradingVolume-btm {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+}
+/*批发商交易额排行组件区域  媒体查询  */
+@media only screen and (min-height:600px ) {
+
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	.tradingVolume-btm {
+		height: 12px;
+		line-height: 12px;
+	}
+}
+@media only screen and (min-height:720px ) {
+
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	
+	.tradingVolume-top {
+		height: 16px;
+	}
+	.tradingVolume-process-wrap {
+		height: 16px;
+	}
+	.tradingVolume-process-bar {
+		height: 8px;
+	}
+	.tradingVolume-btm {
+		height: 14px;
+		line-height: 14px;
+	}
+}
+@media only screen and (min-height:760px ) {
+	.tradingVolume-list li{
+		font-size: 12px;
+	}
+	.tradingVolume-top {
+		height: 16px;
+	}
+	.tradingVolume-btm {
+		height: 16px;
+		line-height: 16px;
+	}
+	
+}
+@media only screen and (min-height:800px ) {
+
+	.tradingVolume-list li{
+		font-size: 13px;
+	}
+	.tradingVolume-top {
+		height: 20px;
+	}
+	.tradingVolume-process-wrap {
+		height: 20px;
+	}
+	.tradingVolume-process-bar {
+		left: 4px;
+		top: 3px;
+		height: 12px;
+	}
+}
+@media only screen and (min-height:900px ) {
+	.tradingVolume-list {
+		padding-top: 5px;
+	}
+	.tradingVolume-list li{
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+	.tradingVolume-top {
+		height: 25px;
+	}
+}
