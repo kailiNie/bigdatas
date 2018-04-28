@@ -102,9 +102,11 @@ export class LoginService {
 
     //获取tonke
     getTolen(token){
+ 
         var option = {
             url: 'common/token/get/pc',
-            rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,
+            // rootPath: LocalConfig.getInstance().BUSINESS_ROOTPATH,TOKEN
+            rootPath: LocalConfig.getInstance().serverUrls.TOKEN,
             method: RequestMethod.Post,
             isPublish: true,
             globalLoad: true,

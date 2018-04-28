@@ -25,7 +25,9 @@ import { ListBarCharComponent } from './components/list-bar-char/list-bar-char.c
 import { ListBarNoframeChartComponent } from  './components/list-bar-noframe-chart/list-bar-noframe-chart.component';
 import { ListBarVerticalCharComponent } from './components/list-bar-vertical-char/list-bar-vertical-char.component';
 import { ListCardComponent } from './components/list-card/list-card.component';
-import { SetModelComponent } from './components/model/set-model/set-model.component'
+import { SetModelComponent } from './components/model/set-model/set-model.component';
+import { ClockComponent } from './components/clock/clock.component';
+import { ListRightDataComponent } from './components/list-right-data/list-right-data.component'
  
 // const appName = 'login';
 // const root = `/apps/logins/`;
@@ -52,6 +54,8 @@ const routers: Routes = [
         ListBarVerticalCharComponent,
         ListCardComponent,
         SetModelComponent,
+        ClockComponent,
+        ListRightDataComponent,
         
     ],
     imports: [

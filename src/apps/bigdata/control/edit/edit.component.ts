@@ -13,8 +13,8 @@ import { EditService } from './edit.service';
 export class EditComponent implements OnInit {
     public tiem = this.commonService.getCurrentTimes();
     public titleObj = this.commonService.titleObj;
+    public setTitle = this.commonService.titleObj.title;
     public interValObj;
-    public setTitle: string;
     public listCard = this.commonService.listCard;
     public areaValue;
     public setModeluser;
@@ -34,6 +34,8 @@ export class EditComponent implements OnInit {
     //保存标题
     save() {
         this.commonService.titleObj.title = this.setTitle;
+        //发送时间
+        this.commonService.changeEngineStatus(true);
     }
 
     goReturn() {
@@ -47,13 +49,11 @@ export class EditComponent implements OnInit {
     }
     //设置
     set(item) {
-        //存入数据查询数据 获取存入的seesion存入
-        let info = Object.assign(item,this.editService.getLocalStorage(item.id));
-        this.setModeluser = info;
+        //取出服务数据 因为这里的listCard已经更新了浏览器数据
+        this.setModeluser = this.commonService.listCard[item.id];
         this.showSetModel = true;
     }
 
- 
     //退出情况
     ngOnDestroy() {
         clearInterval(this.interValObj);
@@ -65,7 +65,10 @@ export class EditComponent implements OnInit {
     }
     //弹框的保存
     saveModel(param){
-        this.editService.localStorageSave(param.id,param);
+        //跟小大小
+        const {page} = param;
+        param.plateSet.size_y = page;
+        this.commonService.editCommonList(param.id,param);
         this.showSetModel = false;
     }
 

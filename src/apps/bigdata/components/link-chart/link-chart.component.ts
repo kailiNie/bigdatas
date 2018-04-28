@@ -124,9 +124,15 @@ export class LinkChartComponent implements OnInit, OnChanges {
             this.options.series[0].data = changes.optionData.currentValue;
             this.updateOptions = {
                 series: [{
-                  data:    this.options.series[0].data
+                  data:   this.options.series[0].data
                 }]
               };
+        }
+
+        if(changes['option'] && changes['optionData'].currentValue){
+            const { width, height } = this.option;
+            this.initOpts.width = width;
+            this.initOpts.height = height;
         }
     }
 }

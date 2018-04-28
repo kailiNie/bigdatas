@@ -19,9 +19,10 @@
         </div>
         <div class="slic-row"  >
             <div class="til">调整大小：</div>
-            <div class="con">
-                <input type="radio" class="slic-radio" name="name1" [(ngModel)]="modal.catlevel" value="1"/> 大版
-                <input type="radio" class="slic-radio" name="name2" [(ngModel)]="modal.catlevel" value="3"/> 小版
+            <div class="con" >
+                <div *ngFor ="let item of modal.rule" >
+                        <input type="radio" class="slic-radio" [(ngModel)]="modal.page" [value]="item.value"/>{{item.name}} 
+                </div>
             </div>
         </div>
         <div class="slic-row"  *ngIf="modal.dateselectionArray.length>0">

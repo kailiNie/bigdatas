@@ -27,7 +27,6 @@ export class SetModelComponent implements OnInit {
      */
     transmitParam: any;
 
-   
 
     constructor() {
         

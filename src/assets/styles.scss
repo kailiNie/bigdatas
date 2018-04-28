@@ -401,3 +401,47 @@
          font-size: 16px;
      }
  }
+
+
+ /*4个边角图标*/
+.borad_corner {
+	position: absolute;
+	z-index: 3;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(./imgs/borad_corner.png) no-repeat;
+	
+}
+.borad_corner_1 {
+	top: -4px;
+	left: -4px;
+	background-position: 0 0;
+}
+.borad_corner_2 {
+	bottom: -4px;
+	left: -4px;
+	background-position: 0 -16px;
+}
+.borad_corner_3 {
+	top: -4px;
+	right: -4px;
+	background-position: 0 -48px;
+}
+.borad_corner_4 {
+	bottom: -4px;
+	right: -4px;
+	background-position: 0 -32px;
+}
+
+.brandMian-til-big {
+	width: 100%;
+	height: 40px;
+	padding:0 20px ;
+	line-height: 40px;
+	font-size: 22px;
+	color: #69e1ff;
+	background-color: #69cfff;
+	background: url(./imgs/brand-til-bg1.png) no-repeat;
+	background-size: 100% 100%;
+}

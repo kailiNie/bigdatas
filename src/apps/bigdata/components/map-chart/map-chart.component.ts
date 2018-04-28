@@ -16,13 +16,18 @@ export class MapChartComponent implements OnInit, OnChanges {
     //传入的值只要宽高 地图ID 获取json数据 以及地图数据
     @Input() option: any;
     @Input() optionData: any;
+    @Input() mapList;
 
     initOpts = {
         width: 600,//默认宽度
         height: 352//默认高度
     };
 
-    constructor(private http: HttpClient, private es: NgxEchartsService) { }
+    constructor(private http: HttpClient, private es: NgxEchartsService) {
+
+        
+
+     }
     ngOnInit() {
         const { width, height } = this.option;
         this.initOpts.width = width + 8;
@@ -98,7 +103,7 @@ export class MapChartComponent implements OnInit, OnChanges {
 
     ngOnChanges() {
         // fetch map geo JSON data from server
-        this.http.get('assets/data/geometryCouties/440300.json')
+        this.http.get('assets/data/geometryProvince/44.json')
             .subscribe(geoJson => {
                 // hide loading:
                 this.mapLoaded = true;
@@ -126,7 +131,7 @@ export class MapChartComponent implements OnInit, OnChanges {
                     //热敏图的值
                     visualMap: {
                         min: 0,
-                        max: 50000,
+                        max: 100,
                         //text: ['0', '50000'],
                         realtime: false,
                         calculable: true, //是否允许拖动

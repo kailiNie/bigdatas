@@ -22,5 +22,7 @@ devIncludeUrls({
     "hourly/trade/query": { "mapUrl": "", "server": "RAP", "isUnion": true},
     "sale/goods/query": { "mapUrl": "", "server": "RAP", "isUnion": true},
     "saleman/saleinfo/query": { "mapUrl": "", "server": "RAP", "isUnion": true},
-    "trade/statistic/query": { "mapUrl": "", "server": "RAP", "isUnion": true}
+    "trade/statistic/query": { "mapUrl": "", "server": "RAP", "isUnion": true},
+    "/sale/order/query": { "mapUrl": "", "server": "RAP", "isUnion": true},
+     
 });

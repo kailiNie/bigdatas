@@ -60,7 +60,8 @@ SUI_LOCAL_CONFIG.serverUrls = {
      */
      framewrokUrl: "",
      zdbVenderUrl: "http://192.168.20.92:8060/",
-     LOGIN_SERVER:"http://192.168.15.70:8087/plat-logincenter/"
+     LOGIN_SERVER:"http://192.168.15.70:8087/plat-logincenter/",
+     TOKEN : "http://192.168.20.74:8099/",
 }
 
 

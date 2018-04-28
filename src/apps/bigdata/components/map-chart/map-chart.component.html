@@ -1,1 +1,33 @@
 <div echarts [options]="options" [initOpts]="initOpts" [loading]="!mapLoaded" class="demo-chart"></div>
+<div class="keyArea-con clearfix">
+    <ul class="keyArea-con-list">
+        <li class="keyArea-con-row1" >
+            <div class="keyArea-con-list-col  keyArea-til">区域</div>
+            <div class="keyArea-con-list-col" *ngFor = "let item of mapList">{{item.areaname}}</div>
+        </li>
+        <li>
+            <div class="keyArea-con-list-col  keyArea-til">客户数</div>
+            <div class="keyArea-con-list-col" *ngFor = "let item of mapList">{{item.totalcusqty}}</div>
+      
+        </li>
+        <li>
+            <div class="keyArea-con-list-col  keyArea-til">周活跃数</div>
+            <div class="keyArea-con-list-col"  *ngFor = "let item of mapList">{{item.activecusqty}}</div>
+ 
+        </li>
+        <li>
+            <div class="keyArea-con-list-col  keyArea-til">周新增数</div>
+            <div class="keyArea-con-list-col"  *ngFor = "let item of mapList">{{item.addqty}}</div>
+ 
+        </li>
+        <li>
+            <div class="keyArea-con-list-col  keyArea-til">周订单数</div>
+            <div class="keyArea-con-list-col" *ngFor = "let item of mapList">{{item.orderqty}}</div>
+        </li>
+        <li>
+            <div class="keyArea-con-list-col  keyArea-til">周交易金额</div>
+            <div class="keyArea-con-list-col" *ngFor = "let item of mapList">{{item.totalamount}}</div>
+    
+        </li>
+    </ul>
+</div>

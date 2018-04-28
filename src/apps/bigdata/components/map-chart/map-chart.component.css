@@ -1,0 +1,98 @@
+/*小视图小样*/
+.keyArea-con {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	box-sizing: border-box;
+	width: 80%;
+	height: 220px;
+	border: 1px solid #69e1ff;
+	border-left: none;
+	background: rgba(19, 33, 64, .8)
+}
+.keyArea-con::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	background: url(../../../../assets/imgs/keyArea-leftBar.png) left center no-repeat;
+	margin-left: -10px;
+	background-size: 100% 100%;
+}
+
+.keyArea-con-list {
+	width: 100%;
+	height: 100%;
+}
+.keyArea-con-list li{
+	box-sizing: border-box;
+	float: left;
+	width: 16%;
+	height: 100%;
+	font-size: 16px;
+}
+.keyArea-con-list li:first-child{
+	color: #69e1ff;
+}
+.keyArea-con-list li:last-child{
+	float: left;
+	width: 20%;
+}
+.keyArea-con-row1 {
+	color: #69e1ff;
+}
+.keyArea-con-list-col {
+	box-sizing: border-box;
+	width: 100%;
+	height: 16%;
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+}
+.keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: left;
+}
+
+/*大视图转换*/
+.keyArea-panel.big .keyArea-con{
+	position: static;
+	box-sizing: border-box;
+	width: 100%;
+	height: 33%;
+	border: none
+}
+.keyArea-panel.big .keyArea-con::before {
+	content: '';
+	display: none;
+}
+.keyArea-panel.big .keyArea-til {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	background: #2464a3;
+}
+.keyArea-panel.big .keyArea-con-row1 .keyArea-con-list-col {
+	padding-left: 20px;
+	text-align: center;
+}
+
+@media only screen and (max-width:1368px ) {
+	.keyArea-con-list li {
+		font-size: 13px;
+	}
+	.keyArea-con {
+		height: 160px;
+	}
+}
+@media only screen and (max-width:1279px ) {
+	.keyArea-con-list li {
+		font-size: 11px;
+	}
+	.keyArea-con-row1 .keyArea-con-list-col {
+		padding-left: 10px;
+	}
+}

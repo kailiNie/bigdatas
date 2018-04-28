@@ -7,18 +7,7 @@ export class EditService {
     constructor(private storage: SuiCookieService) {
 
     }
-
-    //修改列表 刷星次数 isDateselection是否显示周期选择 dateselection 初始化周期
  
-    //存储数据
-    localStorageSave(key, value) {
-        this.storage.putLocal(key, value);
-    }
-
-    //获取数据
-    getLocalStorage(key) {
-        return this.storage.getLocal(key) || {};
-    }
 
 
 

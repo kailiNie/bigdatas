@@ -1,0 +1,8 @@
+<ul class="order-list">
+     <li class="clearfix"  *ngFor="let item of optionData">
+        <span class="order-list-time tx-overflow">{{item.time}}</span>
+        <span class="order-list-area tx-overflow">{{item.buyerareaname}}</span>
+        <span class="order-list-name tx-overflow">{{item.vendername}}</span>
+        <span class="order-list-money ">￥{{item.totalamount}}</span>
+    </li> 
+</ul>

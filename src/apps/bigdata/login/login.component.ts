@@ -67,17 +67,17 @@ export class LoginComponent implements OnInit,OnDestroy {
      * 发送 登录信息
      */
     login() {
+         //发送时间
         this.loginServer.initLogin(this.UserInfo).subscribe((res)=>{
-            console.log(res);
-            // const { result } = res.data;
-            //  this.loginServer.getTolen(result).subscribe(res=>{
-            //     const { accessToken,sessionId,userInfo } = res.data.result;
-            //     this.clientSessionData.cacheToken(accessToken, userInfo.realname);
-            //     this.clientSessionData.cacheUserInfo(userInfo);
-            //     this.commonService.localStorageSave(`${userInfo.realname}_session`,sessionId);
-            //     //登录成功调整到main
-            //     this.router.navigateByUrl('/main');
-            //  });
+            const { result } = res.data;
+             this.loginServer.getTolen(result).subscribe(res=>{
+                const { accessToken,sessionId,userInfo } = res.data.result;
+                this.clientSessionData.cacheToken(accessToken, userInfo.realname);
+                this.clientSessionData.cacheUserInfo(userInfo);
+                this.commonService.localStorageSave(`${userInfo.realname}_session`,sessionId);
+                //登录成功调整到main
+                this.router.navigateByUrl('/main');
+             });
         });
     }
 
